@@ -357,6 +357,35 @@ body {
 		0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+.portfolio-item .item-thumb {
+	position: relative;
+	
+	overflow: hidden;
+}
+
+.portfolio-item .overlay {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 40px 32px;
+
+	position: absolute;
+	bottom: -100%;
+	left: 0;
+
+	color: var(--secondary-text-color);
+
+	background-color: var(--accent-color);
+	
+	transition-property: translateY(100%);
+	transition-duration: 250ms;
+	transition-timing-function: linear;
+}
+
+.portfolio-item .item-thumb:hover .overlay {
+	transform: translateY(-100%);
+}
+
 .portfolio-item-description {
 	padding: 32px 16px;
 
