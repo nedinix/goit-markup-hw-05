@@ -27,6 +27,13 @@
 	box-sizing: border-box;
 }
 
+*:hover,
+*:focus {
+	transition-property: color, background-color, box-shadow;
+	/* transition-duration: 250ms; */
+	/* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+}
+
 body {
 	font-family: "Roboto", sans-serif;
 	color: var(--text-color);
@@ -404,7 +411,7 @@ body {
 	padding: 40px 32px;
 
 	position: absolute;
-	bottom: -100%;
+	top: 100%;
 	left: 0;
 
 	color: var(--secondary-text-color);
@@ -412,11 +419,13 @@ body {
 	background-color: var(--accent-color);
 
 	transition-property: translateY(100%);
-	transition-duration: 250ms;
-	transition-timing-function: linear;
+	transition-duration: 500ms;
+	transition-timing-function: ease-in-out;
 }
 
-.portfolio-item .item-thumb:hover .overlay {
+.portfolio-item .item-thumb:hover .overlay,
+.portfolio-item .item-thumb:focus .overlay {
+	transition-property:  inherit;
 	transform: translateY(-100%);
 }
 
@@ -576,6 +585,7 @@ body {
 .backdrop.is-hidden {
 	opacity: 0;
 	pointer-events: none;
+	visibility: hidden;
 }
 
 .modal {
