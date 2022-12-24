@@ -506,7 +506,7 @@ body {
 	border-radius: 4px;
 	cursor: pointer;
 
-	transition-property: color, background-color, box-shadow;
+	transition-property: color, background-color, border, box-shadow;
 	transition-duration: 250ms;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
