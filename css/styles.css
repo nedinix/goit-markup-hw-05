@@ -654,8 +654,8 @@ body {
 	border-radius: 4px;
 
 	/* transform: translate(-50%, -50%); */
-	transform: scale(0);
-	opacity: 0;
+	/* transform: scale(0);
+	opacity: 0; */
 }
 
 .btn-modal {
