@@ -19,6 +19,18 @@
 	--success-color: #31d0aa;
 }
 
+@keyframes scale-up-center {
+	0% {
+		transform: scale(0.5);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
 *,
 *::after,
 *::before {
@@ -26,13 +38,13 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
+/* 
 *:hover,
 *:focus {
 	transition-property: color, background-color, box-shadow;
-	/* transition-duration: 250ms; */
-	/* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
-}
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+} */
 
 body {
 	font-family: "Roboto", sans-serif;
@@ -86,6 +98,10 @@ body {
 .link {
 	text-decoration: none;
 	color: var(--text-color);
+
+	transition-property: color, background-color, box-shadow;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover,
@@ -98,6 +114,10 @@ body {
 	font-weight: 500;
 	line-height: 1.5;
 	color: var(--secondary-color);
+}
+
+.item.active .nav-link {
+	color: var(--accent-color);
 }
 
 .nav-link,
@@ -128,6 +148,10 @@ body {
 	
 	background-color: var(--accent-color);
 	border-radius: 2px;
+
+	transition-property: color, background-color, box-shadow;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ------------------ headers ------------------ */
@@ -359,6 +383,10 @@ body {
 	color: var(--text-color);
 	text-decoration: none;
 	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+
+	transition-property: color, background-color, box-shadow;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item:hover,
@@ -418,14 +446,13 @@ body {
 
 	background-color: var(--accent-color);
 
-	transition-property: translateY(100%);
-	transition-duration: 500ms;
+	transition-property: transform;
+	transition-duration: 250ms;
 	transition-timing-function: ease-in-out;
 }
 
-.portfolio-item .item-thumb:hover .overlay,
-.portfolio-item .item-thumb:focus .overlay {
-	transition-property:  inherit;
+.portfolio-item:hover .overlay,
+.portfolio-item:focus .overlay {
 	transform: translateY(-100%);
 }
 
@@ -449,6 +476,10 @@ body {
 	border-radius: 4px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 	cursor: pointer;
+
+	transition-property: color, background-color, box-shadow;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-button:hover,
@@ -474,6 +505,10 @@ body {
 	border: 1px solid var(--secondary-accent-color);
 	border-radius: 4px;
 	cursor: pointer;
+
+	transition-property: color, background-color, box-shadow;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-button:hover,
@@ -503,9 +538,14 @@ body {
 	width: 168px;
 	height: 88px;
 	padding: 16px 32px;
+
 	border: 1px solid var(--subtle-text-color);
 	border-radius: 4px;
 	fill: var(--subtle-text-color);
+
+	transition-property: border-color, fill, box-shadow;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers .item:hover,
@@ -553,6 +593,10 @@ body {
 	height: 40px;
 	background-color: rgba(255, 255, 255, 0.1);
 	border-radius: 50%;
+
+	transition-property: color, background-color, box-shadow;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer .icon-box:hover,
@@ -576,10 +620,19 @@ body {
 	position: fixed;
 	left: 0;
 	top: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	width: 100%;
 	height: 100%;
 
 	background-color: rgba(46, 47, 66, 0.4);
+}
+
+.backdrop > .modal {
+	animation: scale-up-center 400ms cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .backdrop.is-hidden {
@@ -589,17 +642,20 @@ body {
 }
 
 .modal {
-	position: absolute;
-	top: 50%;
-	left: 50%;
+	/* position: absolute; */
+	/* top: 50%; */
+	/* left: 50%; */
 	min-height: 576px;
 	min-width: 408px;
 	padding: 24px;
-	transform: translate(-50%, -50%);
-
+	
 	background: #fcfcfc;
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
+
+	/* transform: translate(-50%, -50%); */
+	transform: scale(0);
+	opacity: 0;
 }
 
 .btn-modal {
@@ -615,6 +671,10 @@ body {
 	background: #e7e9fc;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 50%;
+
+	transition-property: color, background-color, box-shadow;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-modal:hover,
