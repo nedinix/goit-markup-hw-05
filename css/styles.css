@@ -102,10 +102,11 @@ body {
 	line-height: 1.5;
 	color: var(--secondary-color);
 
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item.active .nav-link {
+	position: relative;
 	color: var(--accent-color);
 }
 
@@ -596,6 +597,7 @@ body {
 	height: 100%;
 
 	background-color: rgba(46, 47, 66, 0.4);
+
 	opacity: 1;
 	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -608,6 +610,7 @@ body {
 
 .backdrop.is-hidden .modal {
 	transform: translate(-50%, -50%) scale(0.5);
+	opacity: 0;
 }
 
 .modal {
@@ -624,7 +627,8 @@ body {
 	border-radius: 4px;
 
 	transform: translate(-50%, -50%) scale(1);
-	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	opacity: 1;
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-modal {
@@ -641,8 +645,7 @@ body {
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 50%;
 
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-modal:hover,
