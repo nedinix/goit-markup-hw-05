@@ -1,5 +1,5 @@
 /* 
---primary-color: #ffffff;
+--background: #ffffff;
 --secondary-color: #2E2F42;
 --text-color: #434455;
 --secondary-text-color: #F4F4FD;
@@ -8,15 +8,22 @@
 */
 
 :root {
-	--primary-color: #ffffff;
+	--background: #ffffff;
+
+	--primary-brand: #4d5ae5;
+	--pressed-state: #404bbf;
+
 	--secondary-color: #2e2f42;
-	--hero-background: #2e2f42b3;
-	--text-color: #434455;
-	--secondary-text-color: #f4f4fd;
-	--accent-color: #4d5ae5;
-	--secondary-accent-color: #e7e9fc;
-	--subtle-text-color: #8e8f99;
 	--success-color: #31d0aa;
+
+	--text-color: #434455;
+	--subtle-text-color: #8e8f99;
+
+	--secondary-text-color: #f4f4fd;
+	--secondary-accent-color: #e7e9fc;
+
+	--modal-overlay: rgba(46, 47, 66, 0.4);
+	--hero-background: rgba(46, 47, 66, 0.7);
 }
 
 *,
@@ -34,7 +41,7 @@ body {
 	line-height: 1.5;
 	letter-spacing: 0.02em;
 
-	background-color: var(--primary-color);
+	background-color: var(--background);
 }
 
 .container {
@@ -72,7 +79,7 @@ body {
 }
 
 .logo-accent {
-	color: var(--accent-color);
+	color: var(--primary-brand);
 }
 
 /* ------------------ links ------------------ */
@@ -86,7 +93,7 @@ body {
 
 .link:hover,
 .link:focus {
-	color: var(--accent-color);
+	color: var(--primary-brand);
 }
 
 .nav-link,
@@ -107,7 +114,7 @@ body {
 
 .item.active .nav-link {
 	position: relative;
-	color: var(--accent-color);
+	color: var(--primary-brand);
 }
 
 .item.active .nav-link::after {
@@ -118,7 +125,7 @@ body {
 	width: 100%;
 	height: 4px;
 
-	background-color: var(--accent-color);
+	background-color: var(--primary-brand);
 	border-radius: 2px;
 }
 
@@ -130,7 +137,7 @@ body {
 .nav-link:active,
 .contact.link:hover,
 .contact.link:focus {
-	color: var(--accent-color);
+	color: var(--primary-brand);
 }
 
 /* ------------------ headers ------------------ */
@@ -216,7 +223,7 @@ body {
 	font-size: 56px;
 	line-height: 1.07;
 
-	color: var(--primary-color);
+	color: var(--background);
 }
 
 /* -----------------content section ----------------- */
@@ -277,7 +284,7 @@ body {
 .list.team {
 	text-align: center;
 
-	background-color: var(--primary-color);
+	background-color: var(--background);
 }
 
 .team-list {
@@ -294,7 +301,7 @@ body {
 }
 
 .list-box {
-	background-color: var(--primary-color);
+	background-color: var(--background);
 }
 
 .team-list {
@@ -330,7 +337,7 @@ body {
 .social-links .icon-box {
 	width: 40px;
 	height: 40px;
-	background-color: var(--accent-color);
+	background-color: var(--primary-brand);
 	border-radius: 50%;
 }
 
@@ -417,7 +424,7 @@ body {
 
 	color: var(--secondary-text-color);
 
-	background-color: var(--accent-color);
+	background-color: var(--primary-brand);
 
 	transform: translateY(100%);
 	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -441,9 +448,9 @@ body {
 	font-size: 16px;
 	line-height: 1.19;
 	letter-spacing: 0.04em;
-	color: var(--primary-color);
+	color: var(--background);
 
-	background-color: var(--accent-color);
+	background-color: var(--primary-brand);
 	border-style: none;
 	border-radius: 4px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -459,7 +466,7 @@ body {
 }
 
 .order-button:active {
-	background-color: #404bbf;
+	background-color: var(--pressed-state);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -470,7 +477,7 @@ body {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.28;
-	color: var(--accent-color);
+	color: var(--primary-brand);
 
 	background-color: var(--secondary-text-color);
 	border: 1px solid var(--secondary-accent-color);
@@ -485,7 +492,7 @@ body {
 .filter-button:focus {
 	color: var(--secondary-text-color);
 
-	background-color: var(--accent-color);
+	background-color: var(--primary-brand);
 	border: 1px solid transparent;
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -519,8 +526,8 @@ body {
 
 .customers .item:hover,
 .customers .item:focus {
-	border: 1px solid var(--accent-color);
-	fill: var(--accent-color);
+	border: 1px solid var(--primary-brand);
+	fill: var(--primary-brand);
 }
 
 .customers .icon {
@@ -596,7 +603,7 @@ body {
 	width: 100%;
 	height: 100%;
 
-	background-color: rgba(46, 47, 66, 0.4);
+	background-color: var(--modal-overlay);
 
 	opacity: 1;
 	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -650,7 +657,8 @@ body {
 
 .btn-modal:hover,
 .brn-modal:active {
-	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+	background-color: var(--pressed-state);
+	fill: var(--background);
 	border: none;
 	border-radius: 50%;
 }
